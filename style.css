@@ -1,105 +1,104 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, #DC143C, #8B0000, #0D0D0D);
-  background-size: 600% 600%;
-  animation: backgroundAnim 15s ease infinite;
-  color: #fff;
-}
-
-@keyframes backgroundAnim {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #dc13cc, #8b0000, #000000);
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
 .container {
-  max-width: 400px;
+  max-width: 800px;
   margin: auto;
-  padding: 40px 20px;
-  text-align: center;
-  animation: fadeIn 1s ease-in;
 }
 
-h1 {
+.titulo {
   white-space: nowrap;
-  margin-bottom: 40px;
-  font-size: 2em;
+  overflow: auto;
 }
 
 .photo-frame {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
+  margin: 30px auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  padding: 10px;
+  background-color: #222;
 }
 
 .photo {
-  width: 300px;
-  border-radius: 12px;
-  border: 5px solid white;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-  transition: transform 0.4s ease;
-}
-
-.photo:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .carousel {
-  position: relative;
+  margin-top: 40px;
 }
 
 .audio-box {
   display: none;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 10px;
+  margin: 20px 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.audio-box p {
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.audio-box:hover {
-  transform: translateY(-5px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .audio-box.active {
   display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.audio-box p {
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .carousel-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .carousel-buttons button {
-  background: #ffffff22;
-  color: white;
-  border: none;
   padding: 10px 20px;
-  margin: 0 10px;
-  border-radius: 10px;
+  background-color: #dc13cc;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 .carousel-buttons button:hover {
-  background: #ffffff44;
+  background-color: #a10a8c;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .photo-frame {
+    width: 150px;
+    height: 150px;
+  }
+
+  .carousel-buttons {
+    flex-direction: column;
+    gap: 10px;
   }
 }
