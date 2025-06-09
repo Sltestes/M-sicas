@@ -1,0 +1,105 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #DC143C, #8B0000, #0D0D0D);
+  background-size: 600% 600%;
+  animation: backgroundAnim 15s ease infinite;
+  color: #fff;
+}
+
+@keyframes backgroundAnim {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.container {
+  max-width: 400px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+h1 {
+  white-space: nowrap;
+  margin-bottom: 40px;
+  font-size: 2em;
+}
+
+.photo-frame {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.photo {
+  width: 300px;
+  border-radius: 12px;
+  border: 5px solid white;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  transition: transform 0.4s ease;
+}
+
+.photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
+}
+
+.carousel {
+  position: relative;
+}
+
+.audio-box {
+  display: none;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.audio-box p {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.audio-box:hover {
+  transform: translateY(-5px);
+}
+
+.audio-box.active {
+  display: block;
+}
+
+.carousel-buttons {
+  margin-top: 20px;
+}
+
+.carousel-buttons button {
+  background: #ffffff22;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.carousel-buttons button:hover {
+  background: #ffffff44;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
