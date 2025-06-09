@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #dc13cc, #8b0000, #000000);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.titulo {
+  white-space: nowrap;
+  overflow: auto;
+}
+
+.photo-frame {
+  margin: 30px auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  padding: 10px;
+  background-color: #222;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carousel {
+  margin-top: 40px;
+}
+
+.audio-box {
+  display: none;
+  margin: 20px 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.audio-box.active {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.audio-box p {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.carousel-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.carousel-buttons button {
+  padding: 10px 20px;
+  background-color: #dc13cc;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.carousel-buttons button:hover {
+  background-color: #a10a8c;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .photo-frame {
+    width: 150px;
+    height: 150px;
+  }
+
+  .carousel-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
