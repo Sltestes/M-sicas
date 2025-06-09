@@ -3,16 +3,18 @@ const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 let currentIndex = 0;
 
-function showAudio(index) {
-  // Esconde todos
-  audioBoxes.forEach((box, i) => {
-    box.classList.remove("active");
+function stopAllAudios() {
+  audioBoxes.forEach((box) => {
     const audio = box.querySelector("audio");
-    audio.pause();           // Pausa o áudio atual
-    audio.currentTime = 0;   // Reseta o tempo
+    audio.pause();
+    audio.currentTime = 0;
   });
+}
 
-  // Mostra o novo
+function showAudio(index) {
+  stopAllAudios();
+
+  audioBoxes.forEach((box) => box.classList.remove("active"));
   audioBoxes[index].classList.add("active");
 }
 
@@ -24,4 +26,13 @@ prevBtn.addEventListener("click", () => {
 nextBtn.addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % audioBoxes.length;
   showAudio(currentIndex);
+});
+
+// Parar outras músicas se clicar em outra manualmente
+audioBoxes.forEach((box) => {
+  const audio = box.querySelector("audio");
+  audio.addEventListener("play", () => {
+    stopAllAudios();
+    audio.play(); // recomeça a que foi clicada
+  });
 });
